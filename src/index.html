@@ -11,8 +11,9 @@
 <body>
     <main>
     <h1>Vanilla JavaScript App</h1>
-    <h2>Strawberry httptrigger1 JavaScript App</h2>
+    <h2>Strawberry httptrigger1 and 2 JavaScript App</h2>
     <p>Loading content from the API: <b id="name">...</b></p>
+    <p>Loading content from the second API: <b id="second">...</b></p>
     </main>
 
     <script>
@@ -20,6 +21,12 @@
         const { text } = await( await fetch('/api/HttpTrigger1')).json();
         document.querySelector('#name').textContent = text;
     }())
+    </script>
+    <script>
+        (async function() {
+            const { text } = await( await fetch('/api/HttpTrigger2')).json();
+            document.querySelector('#second').textContent = text;
+        }())
     </script>
 </body>
 
